@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braddock Despachante Federal</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Imagem de fundo fixa para o topo */
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Efeito parallax */
+        }
+        
+        /* Ajustes Swiper */
+        .swiper-button-next, .swiper-button-prev { color: #3b82f6 !important; }
+        .swiper-pagination-bullet { background: #cbd5e1 !important; opacity: 0.7; }
+        .swiper-pagination-bullet-active { background: #3b82f6 !important; opacity: 1; }
+
+        /* Esconde a setinha padrão do <details> no Safari/Chrome */
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
+
+    <nav class="bg-slate-900/95 backdrop-blur-sm text-white shadow-lg fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider">BRADDOCK<span class="text-blue-500">.</span></div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#inicio" class="hover:text-blue-400 transition">Início</a>
+                <a href="#diferenciais" class="hover:text-blue-400 transition">Sobre</a>
+                <a href="#servicos" class="hover:text-blue-400 transition">Serviços</a>
+                <a href="#detalhes-servicos" class="hover:text-blue-400 transition">Como Atuamos</a>
+                <a href="#equipe" class="hover:text-blue-400 transition">Equipe</a>
+            </div>
+            <a href="https://wa.me/SEUNUMERO" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-md font-semibold transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp"></i> Falar Agora
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero-section relative h-[100vh] w-full pt-16">
+        <div class="absolute inset-0 bg-slate-900/75 z-0"></div>
+
+        <div class="swiper heroSwiper w-full h-full relative z-10">
+            <div class="swiper-wrapper">
+                
+                <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
+                    <div class="max-w-3xl mx-auto text-white mt-10">
+                        <i class="fa-solid fa-id-card text-5xl text-blue-500 mb-6"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Recupere sua CNH <br>e o direito de dirigir.</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Especialistas em recursos de multas, Lei Seca, Suspensão e Cassação. Blindamos a sua habilitação.</p>
+                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                            Resolver CNH <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
+                    <div class="max-w-3xl mx-auto text-white mt-10">
+                        <i class="fa-solid fa-car text-5xl text-blue-500 mb-6"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Regularize seu veículo <br>sem dores de cabeça.</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Transferências, 1ª Licença, Licenciamento anual e muito mais. Esqueça a fila do Detran.</p>
+                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                            Regularizar Veículo <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
+                    <div class="max-w-3xl mx-auto text-white mt-10">
+                        <i class="fa-solid fa-crosshairs text-5xl text-blue-500 mb-6"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Assessoria completa <br>para CAC e Armas.</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Posse, Porte, Concessão de CR e renovação. Cuidamos de toda a burocracia para você.</p>
+                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                            Assessoria CAC <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
+                    <div class="max-w-3xl mx-auto text-white mt-10">
+                        <i class="fa-solid fa-ship text-5xl text-blue-500 mb-6"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Náutica, Passaportes <br>e Vistos.</h1>
+                        <p class="text-lg md:text-xl text-gray-200 mb-8">Habilitação Arrais, renovação de passaporte e assessoria para Visto Americano.</p>
+                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                            Falar com Especialista <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-next hidden md:flex"></div>
+            <div class="swiper-button-prev hidden md:flex"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl font-bold text-slate-900">Nossos Diferenciais</h2>
+                <div class="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Equipe Qualificada</h3>
+                    <p class="text-gray-600 leading-relaxed">Especialistas nas legislações vigentes e trâmites administrativos complexos.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Rapidez e Eficiência</h3>
+                    <p class="text-gray-600 leading-relaxed">Compromisso em entregar o melhor resultado no menor tempo possível.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3">Suporte Constante</h3>
+                    <p class="text-gray-600 leading-relaxed">Transparência total. Você sempre saberá o andamento do seu processo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
