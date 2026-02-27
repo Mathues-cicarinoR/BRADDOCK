@@ -6,112 +6,129 @@
     <title>Braddock Despachante Federal</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <style>
         html { scroll-behavior: smooth; }
-        
-        /* Imagem de fundo fixa para o topo */
         .hero-section {
             background-image: url('https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito parallax */
+            background-attachment: fixed;
         }
-        
-        /* Ajustes Swiper - Trocado de azul para branco/cinza para combinar com o tema Black */
-        .swiper-button-next, .swiper-button-prev { color: #ffffff !important; }
+        .swiper-button-next, .swiper-button-prev { color: #D4AF37 !important; }
         .swiper-pagination-bullet { background: #9ca3af !important; opacity: 0.7; }
-        .swiper-pagination-bullet-active { background: #ffffff !important; opacity: 1; }
-
-        /* Esconde a setinha padrão do <details> no Safari/Chrome */
+        .swiper-pagination-bullet-active { background: #D4AF37 !important; opacity: 1; }
         details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <nav class="bg-black/95 backdrop-blur-sm text-white shadow-lg fixed w-full z-50 top-0 border-b border-gray-900">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider">BRADDOCK<span class="text-gray-400">.</span></div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#inicio" class="hover:text-gray-300 transition">Início</a>
-                <a href="#diferenciais" class="hover:text-gray-300 transition">Sobre</a>
-                <a href="#servicos" class="hover:text-gray-300 transition">Serviços</a>
-                <a href="#detalhes-servicos" class="hover:text-gray-300 transition">Como Atuamos</a>
-                <a href="#equipe" class="hover:text-gray-300 transition">Equipe</a>
+    <nav class="bg-black/95 backdrop-blur-sm text-white shadow-lg fixed w-full z-50 top-0 border-b border-gray-900 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center relative">
+            <div class="text-2xl font-bold tracking-wider z-20">BRADDOCK<span class="text-dourado">.</span></div>
+            
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#inicio" class="relative group font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                    Início
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#diferenciais" class="relative group font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                    Sobre
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#servicos" class="relative group font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                    Serviços
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#detalhes-servicos" class="relative group font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                    Como Atuamos
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#equipe" class="relative group font-medium text-gray-300 hover:text-white transition-colors duration-300">
+                    Equipe
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="bg-green-500 hover:bg-green-600 hover:-translate-y-1 hover:shadow-[0_4px_15px_rgba(34,197,94,0.4)] px-5 py-2.5 rounded-md font-semibold transition-all duration-300 flex items-center gap-2 text-white">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> Falar Agora
+                </a>
             </div>
-            <a href="https://wa.me/SEUNUMERO" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-md font-semibold transition flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp"></i> Falar Agora
-            </a>
+
+            <button id="mobile-menu-btn" class="md:hidden text-gray-200 hover:text-white focus:outline-none z-20 transition-transform duration-300">
+                <i class="fa-solid fa-bars text-3xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-black/95 border-t border-gray-900 shadow-xl transition-all duration-300 origin-top transform scale-y-0 opacity-0 pointer-events-none">
+            <div class="flex flex-col px-6 py-6 space-y-4">
+                <a href="#inicio" class="mobile-link text-lg font-medium text-gray-300 hover:text-white border-b border-gray-800 pb-2 transition-colors">Início</a>
+                <a href="#diferenciais" class="mobile-link text-lg font-medium text-gray-300 hover:text-white border-b border-gray-800 pb-2 transition-colors">Sobre</a>
+                <a href="#servicos" class="mobile-link text-lg font-medium text-gray-300 hover:text-white border-b border-gray-800 pb-2 transition-colors">Serviços</a>
+                <a href="#detalhes-servicos" class="mobile-link text-lg font-medium text-gray-300 hover:text-white border-b border-gray-800 pb-2 transition-colors">Como Atuamos</a>
+                <a href="#equipe" class="mobile-link text-lg font-medium text-gray-300 hover:text-white border-b border-gray-800 pb-2 transition-colors">Equipe</a>
+                <a href="https://wa.me/SEUNUMERO" target="_blank" class="mobile-link w-full text-center mt-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition-colors flex justify-center items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Falar Agora
+                </a>
+            </div>
         </div>
     </nav>
 
     <section id="inicio" class="hero-section relative h-[100vh] w-full pt-16">
         <div class="absolute inset-0 bg-slate-900/80 z-0"></div>
-
         <div class="swiper heroSwiper w-full h-full relative z-10">
             <div class="swiper-wrapper">
-                
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-id-card text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <i class="fa-solid fa-id-card text-5xl text-dourado mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Recupere sua CNH <br>e o direito de dirigir.</h1>
                         <p class="text-lg md:text-xl text-gray-300 mb-8">Especialistas em recursos de multas, Lei Seca, Suspensão e Cassação. Blindamos a sua habilitação.</p>
-                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 hover:-translate-y-1 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Resolver CNH <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-car text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <i class="fa-solid fa-car text-5xl text-dourado mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Regularize seu veículo <br>sem dores de cabeça.</h1>
                         <p class="text-lg md:text-xl text-gray-300 mb-8">Transferências, 1ª Licença, Licenciamento anual e muito mais. Esqueça a fila do Detran.</p>
-                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 hover:-translate-y-1 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Regularizar Veículo <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-crosshairs text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <i class="fa-solid fa-crosshairs text-5xl text-dourado mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Assessoria completa <br>para CAC e Armas.</h1>
                         <p class="text-lg md:text-xl text-gray-300 mb-8">Posse, Porte, Concessão de CR e renovação. Cuidamos de toda a burocracia para você.</p>
-                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 hover:-translate-y-1 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Assessoria CAC <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-ship text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <i class="fa-solid fa-ship text-5xl text-dourado mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Náutica</h1>
                         <p class="text-lg md:text-xl text-gray-300 mb-8">Habilitação Arrais</p>
-                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 hover:-translate-y-1 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Falar com Especialista <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-passport text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <i class="fa-solid fa-passport text-5xl text-dourado mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Passaportes e Vistos.</h1>
                         <p class="text-lg md:text-xl text-gray-300 mb-8">Renovação e emissão de passaporte e assessoria para Visto Americano.</p>
-                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 hover:-translate-y-1 text-white font-bold py-3 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Falar com Especialista <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
             <div class="swiper-button-next hidden md:flex"></div>
             <div class="swiper-button-prev hidden md:flex"></div>
@@ -123,25 +140,25 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-slate-900">Nossos Diferenciais</h2>
-                <div class="w-20 h-1 bg-black mx-auto mt-4"></div>
+                <div class="w-20 h-1 bg-dourado mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
+                    <div class="bg-gray-100 w-24 h-24   border-4 rounded-full border-dourado flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner transition-transform duration-300 hover:scale-110">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Equipe Qualificada</h3>
                     <p class="text-gray-600 leading-relaxed">Especialistas nas legislações vigentes e trâmites administrativos complexos.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
+                    <div class="bg-gray-100 w-24 h-24 border-4 rounded-full border-dourado flex items-center justify-center boder border-dourado mx-auto mb-6 text-black text-4xl shadow-inner transition-transform duration-300 hover:scale-110">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Rapidez e Eficiência</h3>
                     <p class="text-gray-600 leading-relaxed">Compromisso em entregar o melhor resultado no menor tempo possível.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
+                    <div class="bg-gray-100 w-24 h-24 border-4 rounded-full border-dourado flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner transition-transform duration-300 hover:scale-110">
                         <i class="fa-solid fa-comments"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Suporte Constante</h3>
@@ -158,127 +175,116 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center" id="numeros-section">
                 <div data-aos="zoom-in" data-aos-delay="100">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
-                        <span class="counter" data-target="1500">0</span>+
-                    </div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center"><span class="counter" data-target="1500">0</span>+</div>
                     <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Processos</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
-                        <span class="counter" data-target="1200">0</span>+
-                    </div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center"><span class="counter" data-target="1200">0</span>+</div>
                     <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Clientes</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
-                        <span class="counter" data-target="99">0</span>%
-                    </div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center"><span class="counter" data-target="99">0</span>%</div>
                     <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Satisfeitos</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="400">
-                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
-                        <span class="counter" data-target="95">0</span>%
-                    </div>
+                    <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center"><span class="counter" data-target="95">0</span>%</div>
                     <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">De Êxito</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="py-24 max-w-7xl mx-auto px-4">
+    <section id="servicos" class="py-24 max-w-7xl mx-auto px-4 bg-gray-50">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Como podemos te ajudar hoje?</h2>
-            <div class="w-20 h-1 bg-black mx-auto mt-6 mb-4"></div>
+            <div class="w-20 h-1 bg-dourado mx-auto mt-6 mb-4"></div>
             <p class="text-gray-600 text-lg">Escolha a área que você precisa de assessoria especializada.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa-solid fa-id-card text-4xl text-black mb-4"></i>
-                <h3 class="text-xl font-bold mb-4">CNH e Trânsito</h3>
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-t-4 border-black hover:border-dourado  flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-id-card text-4xl text-black mb-4 transform transition-all duration-300 group-hover:scale-125   origin-left"></i>
+                <h3 class="text-xl font-bold mb-4 text-slate-900 ">CNH e Trânsito</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Recurso de multas & Lei Seca</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Suspensão e Cassação</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Multa na provisória</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Curso de reciclagem</li>
                 </ul>
-                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Resolver CNH</a>
+                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 hover:shadow-md text-white font-semibold py-3 rounded-lg transition-all duration-300 transform group-hover:-translate-y-1"><i class="fa-brands fa-whatsapp mr-2"></i>Resolver CNH</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-car text-4xl text-black mb-4"></i>
-                <h3 class="text-xl font-bold mb-4">Regularização Veicular</h3>
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-t-4 border-black hover:border-dourado flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-car text-4xl text-black mb-4 transform transition-all duration-300 group-hover:scale-125   origin-left"></i>
+                <h3 class="text-xl font-bold mb-4 text-slate-900 ">Regularização Veicular</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Transferência de propriedade</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Licenciamento & 1ª Licença</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Segunda via de CRV</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Mudança de características</li>
                 </ul>
-                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Regularizar Veículo</a>
+                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 hover:shadow-md text-white font-semibold py-3 rounded-lg transition-all duration-300 transform group-hover:-translate-y-1"><i class="fa-brands fa-whatsapp mr-2"></i>Regularizar Veículo</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                <i class="fa-solid fa-crosshairs text-4xl text-black mb-4"></i>
-                <h3 class="text-xl font-bold mb-4">Armas de Fogo (CAC)</h3>
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-t-4 border-black hover:border-dourado flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-crosshairs text-4xl text-black mb-4 transform transition-all duration-300 group-hover:scale-125  origin-left"></i>
+                <h3 class="text-xl font-bold mb-4 text-slate-900 ">Armas de Fogo (CAC)</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Posse e Porte de arma</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Concessão de CR</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Renovação e Apostilamento</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Mudança de endereço</li>
                 </ul>
-                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria CAC</a>
+                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 hover:shadow-md text-white font-semibold py-3 rounded-lg transition-all duration-300 transform group-hover:-translate-y-1"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria CAC</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="400">
-                <i class="fa-solid fa-ship text-4xl text-black mb-4"></i>
-                <h3 class="text-xl font-bold mb-4">Assessoria Náutica</h3>
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-t-4 border-black hover:border-dourado flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                <i class="fa-solid fa-ship text-4xl text-black mb-4 transform transition-all duration-300 group-hover:scale-125   origin-left"></i>
+                <h3 class="text-xl font-bold mb-4 text-slate-900 ">Assessoria Náutica</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Habilitação Arrais amador</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Habilitação Motonauta</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Renovação de habilitação</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Regularização de embarcação</li>
                 </ul>
-                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria Náutica</a>
+                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 hover:shadow-md text-white font-semibold py-3 rounded-lg transition-all duration-300 transform group-hover:-translate-y-1"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria Náutica</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="500">
-                <i class="fa-solid fa-passport text-4xl text-black mb-4"></i>
-                <h3 class="text-xl font-bold mb-4">Passaportes e Vistos</h3>
+            <div class="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-300 border-t-4 border-black hover:border-dourado flex flex-col" data-aos="fade-up" data-aos-delay="500">
+                <i class="fa-solid fa-passport text-4xl text-black mb-4 transform transition-all duration-300 group-hover:scale-125  origin-left"></i>
+                <h3 class="text-xl font-bold mb-4 text-slate-900 ">Passaportes e Vistos</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Emissão do 1º passaporte</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Renovação de passaporte</li>
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Assessoria para Visto Americano</li>
                 </ul>
-                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Tirar Passaporte/Visto</a>
+                <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 hover:shadow-md text-white font-semibold py-3 rounded-lg transition-all duration-300 transform group-hover:-translate-y-1"><i class="fa-brands fa-whatsapp mr-2"></i>Tirar Passaporte/Visto</a>
             </div>
 
         </div>
     </section>
 
-    <section id="detalhes-servicos" class="py-20 bg-slate-50 border-t border-gray-200">
+    <section id="detalhes-servicos" class="py-20 bg-white border-t border-gray-200">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Entenda Como Atuamos</h2>
-                <div class="w-20 h-1 bg-black mx-auto mt-6 mb-4"></div>
+                <div class="w-20 h-1 bg-dourado mx-auto mt-6 mb-4"></div>
                 <p class="text-gray-600 text-lg">Detalhes completos sobre as nossas frentes de trabalho.</p>
             </div>
-
             <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
-                
-                <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm" open>
+                <details class="group border border-gray-200 rounded-lg bg-gray-50 p-6 cursor-pointer shadow-sm hover:shadow-md transition" open>
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
                         <span class="flex items-center gap-3"><i class="fa-solid fa-id-card text-black"></i> Trânsito e CNH</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
                     </summary>
-                    <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-100 pt-4">
+                    <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-200 pt-4">
                         <p class="mb-3"><strong>Lei Seca:</strong> Atuamos na verificação completa do auto de infração, checando a validade do etilômetro junto ao INMETRO e buscando nulidades processuais para blindar a sua CNH.</p>
                         <p class="mb-3"><strong>Suspensão e Cassação:</strong> Defesa especializada para motoristas que atingiram o limite de pontos ou cometeram infrações gravíssimas (multas mandatórias).</p>
                         <p><strong>Permissão para Dirigir (PPD):</strong> Protegemos motoristas recém-habilitados contra multas que podem gerar a perda da permissão.</p>
                     </div>
                 </details>
-
-                <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
+                <details class="group border border-gray-200 rounded-lg bg-gray-50 p-6 cursor-pointer shadow-sm hover:shadow-md transition">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
                         <span class="flex items-center gap-3"><i class="fa-solid fa-car text-black"></i> Regularização Veicular</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
@@ -289,7 +295,7 @@
                     </div>
                 </details>
 
-                <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
+                <details class="group border border-gray-200 rounded-lg bg-gray-50 p-6 cursor-pointer shadow-sm hover:shadow-md transition">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
                         <span class="flex items-center gap-3"><i class="fa-solid fa-crosshairs text-black"></i> Armas de Fogo e CAC</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
@@ -300,7 +306,7 @@
                     </div>
                 </details>
 
-                <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
+                <details class="group border border-gray-200 rounded-lg bg-gray-50 p-6 cursor-pointer shadow-sm hover:shadow-md transition">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
                         <span class="flex items-center gap-3"><i class="fa-solid fa-ship text-black"></i> Náutica e Passaportes</span>
                         <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
@@ -310,56 +316,55 @@
                         <p><strong>Passaporte e Vistos:</strong> Orientação e agendamento para o <strong>1º Passaporte</strong>, renovações e assessoria no preenchimento consular para o <strong>Visto Americano</strong>.</p>
                     </div>
                 </details>
-
             </div>
         </div>
     </section>
 
-    <section id="equipe" class="py-20 bg-black text-white">
+    <section id="equipe" class="py-20 bg-black text-white border-t border-gray-900">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold">Conheça Nossa Equipe</h2>
-                <div class="w-20 h-1 bg-blue-500 mx-auto mt-6 mb-4"></div>
+                <div class="w-20 h-1 bg-dourado mx-auto mt-6 mb-4"></div>
                 <p class="text-gray-400 text-lg">Especialistas prontos para defender seus direitos.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-slate-800 rounded-xl p-8 text-center shadow-lg border border-slate-700" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://ui-avatars.com/api/?name=Seu+Nome&background=3b82f6&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-slate-700">
+                <div class="bg-gray-900 rounded-xl p-8 text-center shadow-lg border border-gray-700 hover:-translate-y-2 hover:shadow-2xl hover:border-dourado transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://ui-avatars.com/api/?name=Seu+Nome&background=333&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-dourado">
                     <h3 class="font-bold text-2xl mb-1">Seu Nome</h3>
-                    <p class="text-blue-400 font-semibold mb-4">Diretor(a) Geral</p>
-                    <p class="text-gray-400 text-sm">Responsável pela gestão de processos, peticionamentos e estratégia comercial da empresa.</p>
+                    <p class="text-gray-400 font-semibold mb-4">Diretor(a) Geral</p>
+                    <p class="text-gray-500 text-sm">Responsável pela gestão de processos, peticionamentos e estratégia comercial da empresa.</p>
                 </div>
 
-                <div class="bg-slate-800 rounded-xl p-8 text-center shadow-lg border border-slate-700" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://ui-avatars.com/api/?name=Especialista+2&background=3b82f6&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-slate-700">
+                <div class="bg-gray-900 rounded-xl p-8 text-center shadow-lg border border-gray-700 hover:-translate-y-2 hover:shadow-2xl hover:border-dourado transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://ui-avatars.com/api/?name=Especialista+2&background=333&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-dourado">
                     <h3 class="font-bold text-2xl mb-1">Nome do Sócio</h3>
-                    <p class="text-blue-400 font-semibold mb-4">Setor Administrativo</p>
-                    <p class="text-gray-400 text-sm">Especialista em acompanhamento processual, atendimento e organização de demandas internas.</p>
+                    <p class="text-gray-400 font-semibold mb-4">Setor Administrativo</p>
+                    <p class="text-gray-500 text-sm">Especialista em acompanhamento processual, atendimento e organização de demandas internas.</p>
                 </div>
 
-                <div class="bg-slate-800 rounded-xl p-8 text-center shadow-lg border border-slate-700" data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://ui-avatars.com/api/?name=Especialista+3&background=3b82f6&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-slate-700">
+                <div class="bg-gray-900 rounded-xl p-8 text-center shadow-lg border border-gray-700 hover:-translate-y-2 hover:shadow-2xl hover:border-dourado transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://ui-avatars.com/api/?name=Especialista+3&background=333&color=fff&size=150" alt="Foto Equipe" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-dourado">
                     <h3 class="font-bold text-2xl mb-1">Nome do Colega</h3>
-                    <p class="text-blue-400 font-semibold mb-4">Suporte ao Cliente</p>
-                    <p class="text-gray-400 text-sm">Focado em manter a transparência, oferecendo retornos ágeis e suporte diário aos clientes.</p>
+                    <p class="text-gray-400 font-semibold mb-4">Suporte ao Cliente</p>
+                    <p class="text-gray-500 text-sm">Focado em manter a transparência, oferecendo retornos ágeis e suporte diário aos clientes.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <a href="https://wa.me/SEUNUMERO" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 transition duration-300 z-50">
+    <a href="https://wa.me/SEUNUMERO" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 hover:-translate-y-1 transition-all duration-300 z-50">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <footer class="bg-black text-gray-400 py-12 text-center border-t border-slate-800">
+    <footer class="bg-black text-gray-400 py-12 text-center border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-2xl font-bold text-white mb-2">BRADDOCK<span class="text-gray-500">.</span></h2>
             <p class="mb-6">Atendimento rápido, transparente e especializado.</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-2xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-facebook text-2xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
             </div>
             <p class="text-sm">© 2026 Braddock Despachante Federal. Todos os direitos reservados.</p>
         </div>
@@ -369,57 +374,85 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
     <script>
-        // Inicializa as Animações AOS
+        // Inicializa AOS
         AOS.init({ once: true, offset: 50, duration: 800 });
 
-        // Inicializa o Carrossel 
+        // Inicializa Swiper
         var swiper = new Swiper(".heroSwiper", {
             loop: true,
-            autoplay: {
-                delay: 4500,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+            autoplay: { delay: 4500, disableOnInteraction: false },
+            pagination: { el: ".swiper-pagination", clickable: true },
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
         });
 
-        // Script para animar os números
+        // Contadores Animados
         const counters = document.querySelectorAll('.counter');
         let hasCounted = false;
-
         const observer = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !hasCounted) {
                 hasCounted = true;
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
-                    const duration = 2000; // 2 segundos de animação
-                    const increment = target / (duration / 16); // 60fps
+                    const increment = target / (2000 / 16);
                     let current = 0;
-
                     const updateCount = () => {
                         current += increment;
                         if (current < target) {
                             counter.innerText = Math.ceil(current);
                             requestAnimationFrame(updateCount);
-                        } else {
-                            counter.innerText = target;
-                        }
+                        } else { counter.innerText = target; }
                     };
                     updateCount();
                 });
             }
         }, { threshold: 0.5 });
+        if(document.getElementById('numeros-section')) observer.observe(document.getElementById('numeros-section'));
 
-        // Inicia a observação na seção de números
-        if(document.getElementById('numeros-section')) {
-            observer.observe(document.getElementById('numeros-section'));
+        // SCRIPT DO MENU MOBILE RESPONSIVO
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileIcon = mobileMenuBtn.querySelector('i');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            if (mobileMenu.classList.contains('scale-y-0')) {
+                mobileMenu.classList.remove('scale-y-0', 'opacity-0', 'pointer-events-none');
+                mobileMenu.classList.add('scale-y-100', 'opacity-100', 'pointer-events-auto');
+                mobileIcon.classList.remove('fa-bars');
+                mobileIcon.classList.add('fa-xmark');
+            } else {
+                mobileMenu.classList.remove('scale-y-100', 'opacity-100', 'pointer-events-auto');
+                mobileMenu.classList.add('scale-y-0', 'opacity-0', 'pointer-events-none');
+                mobileIcon.classList.remove('fa-xmark');
+                mobileIcon.classList.add('fa-bars');
+            }
         }
+
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('scale-y-0')) toggleMenu();
+            });
+        });
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dourado: {
+                DEFAULT: '#D4AF37', // Dourado principal premium
+                light: '#F3E5AB',   // Dourado claro (para fundos ou brilhos)
+                dark: '#AA8C2C',    // Dourado escuro (para efeitos de hover)
+              }
+            }
+          }
+        }
+      }
     </script>
 </body>
 </html>
