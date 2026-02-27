@@ -24,10 +24,10 @@
             background-attachment: fixed; /* Efeito parallax */
         }
         
-        /* Ajustes Swiper */
-        .swiper-button-next, .swiper-button-prev { color: #3b82f6 !important; }
-        .swiper-pagination-bullet { background: #cbd5e1 !important; opacity: 0.7; }
-        .swiper-pagination-bullet-active { background: #3b82f6 !important; opacity: 1; }
+        /* Ajustes Swiper - Trocado de azul para branco/cinza para combinar com o tema Black */
+        .swiper-button-next, .swiper-button-prev { color: #ffffff !important; }
+        .swiper-pagination-bullet { background: #9ca3af !important; opacity: 0.7; }
+        .swiper-pagination-bullet-active { background: #ffffff !important; opacity: 1; }
 
         /* Esconde a setinha padrão do <details> no Safari/Chrome */
         details > summary::-webkit-details-marker { display: none; }
@@ -35,15 +35,15 @@
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
-    <nav class="bg-slate-900/95 backdrop-blur-sm text-white shadow-lg fixed w-full z-50 top-0">
+    <nav class="bg-black/95 backdrop-blur-sm text-white shadow-lg fixed w-full z-50 top-0 border-b border-gray-900">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider">BRADDOCK<span class="text-blue-500">.</span></div>
+            <div class="text-2xl font-bold tracking-wider">BRADDOCK<span class="text-gray-400">.</span></div>
             <div class="hidden md:flex space-x-6">
-                <a href="#inicio" class="hover:text-blue-400 transition">Início</a>
-                <a href="#diferenciais" class="hover:text-blue-400 transition">Sobre</a>
-                <a href="#servicos" class="hover:text-blue-400 transition">Serviços</a>
-                <a href="#detalhes-servicos" class="hover:text-blue-400 transition">Como Atuamos</a>
-                <a href="#equipe" class="hover:text-blue-400 transition">Equipe</a>
+                <a href="#inicio" class="hover:text-gray-300 transition">Início</a>
+                <a href="#diferenciais" class="hover:text-gray-300 transition">Sobre</a>
+                <a href="#servicos" class="hover:text-gray-300 transition">Serviços</a>
+                <a href="#detalhes-servicos" class="hover:text-gray-300 transition">Como Atuamos</a>
+                <a href="#equipe" class="hover:text-gray-300 transition">Equipe</a>
             </div>
             <a href="https://wa.me/SEUNUMERO" target="_blank" class="bg-green-500 hover:bg-green-600 px-5 py-2 rounded-md font-semibold transition flex items-center gap-2">
                 <i class="fa-brands fa-whatsapp"></i> Falar Agora
@@ -52,17 +52,17 @@
     </nav>
 
     <section id="inicio" class="hero-section relative h-[100vh] w-full pt-16">
-        <div class="absolute inset-0 bg-slate-900/75 z-0"></div>
+        <div class="absolute inset-0 bg-slate-900/80 z-0"></div>
 
         <div class="swiper heroSwiper w-full h-full relative z-10">
             <div class="swiper-wrapper">
                 
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-id-card text-5xl text-blue-500 mb-6"></i>
+                        <i class="fa-solid fa-id-card text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Recupere sua CNH <br>e o direito de dirigir.</h1>
-                        <p class="text-lg md:text-xl text-gray-200 mb-8">Especialistas em recursos de multas, Lei Seca, Suspensão e Cassação. Blindamos a sua habilitação.</p>
-                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                        <p class="text-lg md:text-xl text-gray-300 mb-8">Especialistas em recursos de multas, Lei Seca, Suspensão e Cassação. Blindamos a sua habilitação.</p>
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Resolver CNH <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -70,10 +70,10 @@
 
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-car text-5xl text-blue-500 mb-6"></i>
+                        <i class="fa-solid fa-car text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Regularize seu veículo <br>sem dores de cabeça.</h1>
-                        <p class="text-lg md:text-xl text-gray-200 mb-8">Transferências, 1ª Licença, Licenciamento anual e muito mais. Esqueça a fila do Detran.</p>
-                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                        <p class="text-lg md:text-xl text-gray-300 mb-8">Transferências, 1ª Licença, Licenciamento anual e muito mais. Esqueça a fila do Detran.</p>
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Regularizar Veículo <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -81,10 +81,10 @@
 
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-crosshairs text-5xl text-blue-500 mb-6"></i>
+                        <i class="fa-solid fa-crosshairs text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
                         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Assessoria completa <br>para CAC e Armas.</h1>
-                        <p class="text-lg md:text-xl text-gray-200 mb-8">Posse, Porte, Concessão de CR e renovação. Cuidamos de toda a burocracia para você.</p>
-                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                        <p class="text-lg md:text-xl text-gray-300 mb-8">Posse, Porte, Concessão de CR e renovação. Cuidamos de toda a burocracia para você.</p>
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Assessoria CAC <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -92,10 +92,21 @@
 
                 <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
                     <div class="max-w-3xl mx-auto text-white mt-10">
-                        <i class="fa-solid fa-ship text-5xl text-blue-500 mb-6"></i>
-                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Náutica, Passaportes <br>e Vistos.</h1>
-                        <p class="text-lg md:text-xl text-gray-200 mb-8">Habilitação Arrais, renovação de passaporte e assessoria para Visto Americano.</p>
-                        <a href="#servicos" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2">
+                        <i class="fa-solid fa-ship text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Náutica</h1>
+                        <p class="text-lg md:text-xl text-gray-300 mb-8">Habilitação Arrais</p>
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
+                            Falar com Especialista <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide flex flex-col items-center justify-center text-center px-4">
+                    <div class="max-w-3xl mx-auto text-white mt-10">
+                        <i class="fa-solid fa-passport text-5xl text-gray-300 mb-6 drop-shadow-lg"></i>
+                        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Passaportes e Vistos.</h1>
+                        <p class="text-lg md:text-xl text-gray-300 mb-8">Renovação e emissão de passaporte e assessoria para Visto Americano.</p>
+                        <a href="#servicos" class="bg-black hover:bg-gray-800 text-white font-bold py-3 px-8 rounded-lg text-lg transition shadow-lg inline-flex items-center gap-2 border border-gray-700">
                             Falar com Especialista <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
@@ -112,25 +123,25 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl font-bold text-slate-900">Nossos Diferenciais</h2>
-                <div class="w-20 h-1 bg-blue-500 mx-auto mt-4"></div>
+                <div class="w-20 h-1 bg-black mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
                 <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
                         <i class="fa-solid fa-user-tie"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Equipe Qualificada</h3>
                     <p class="text-gray-600 leading-relaxed">Especialistas nas legislações vigentes e trâmites administrativos complexos.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Rapidez e Eficiência</h3>
                     <p class="text-gray-600 leading-relaxed">Compromisso em entregar o melhor resultado no menor tempo possível.</p>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-blue-50 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-blue-600 text-4xl">
+                    <div class="bg-gray-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 text-black text-4xl shadow-inner">
                         <i class="fa-solid fa-comments"></i>
                     </div>
                     <h3 class="font-bold text-xl mb-3">Suporte Constante</h3>
@@ -140,7 +151,7 @@
         </div>
     </section>
 
-    <section class="py-16 bg-blue-600 text-white">
+    <section class="py-16 bg-black text-white border-y border-gray-800">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl font-bold">Nossos números falam por nós</h2>
@@ -150,25 +161,25 @@
                     <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
                         <span class="counter" data-target="1500">0</span>+
                     </div>
-                    <p class="text-blue-200 font-semibold uppercase tracking-wider text-sm">Processos</p>
+                    <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Processos</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="200">
                     <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
                         <span class="counter" data-target="1200">0</span>+
                     </div>
-                    <p class="text-blue-200 font-semibold uppercase tracking-wider text-sm">Clientes</p>
+                    <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Clientes</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="300">
                     <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
                         <span class="counter" data-target="99">0</span>%
                     </div>
-                    <p class="text-blue-200 font-semibold uppercase tracking-wider text-sm">Satisfeitos</p>
+                    <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">Satisfeitos</p>
                 </div>
                 <div data-aos="zoom-in" data-aos-delay="400">
                     <div class="text-4xl md:text-5xl font-extrabold mb-2 flex justify-center">
                         <span class="counter" data-target="95">0</span>%
                     </div>
-                    <p class="text-blue-200 font-semibold uppercase tracking-wider text-sm">De Êxito</p>
+                    <p class="text-gray-400 font-semibold uppercase tracking-wider text-sm">De Êxito</p>
                 </div>
             </div>
         </div>
@@ -177,14 +188,14 @@
     <section id="servicos" class="py-24 max-w-7xl mx-auto px-4">
         <div class="text-center mb-16" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Como podemos te ajudar hoje?</h2>
-            <div class="w-20 h-1 bg-blue-500 mx-auto mt-6 mb-4"></div>
+            <div class="w-20 h-1 bg-black mx-auto mt-6 mb-4"></div>
             <p class="text-gray-600 text-lg">Escolha a área que você precisa de assessoria especializada.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-blue-600 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa-solid fa-id-card text-4xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-id-card text-4xl text-black mb-4"></i>
                 <h3 class="text-xl font-bold mb-4">CNH e Trânsito</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Recurso de multas & Lei Seca</li>
@@ -195,8 +206,8 @@
                 <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Resolver CNH</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-blue-600 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-car text-4xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-car text-4xl text-black mb-4"></i>
                 <h3 class="text-xl font-bold mb-4">Regularização Veicular</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Transferência de propriedade</li>
@@ -207,8 +218,8 @@
                 <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Regularizar Veículo</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-blue-600 flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                <i class="fa-solid fa-crosshairs text-4xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-crosshairs text-4xl text-black mb-4"></i>
                 <h3 class="text-xl font-bold mb-4">Armas de Fogo (CAC)</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Posse e Porte de arma</li>
@@ -219,8 +230,8 @@
                 <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria CAC</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-blue-600 flex flex-col" data-aos="fade-up" data-aos-delay="400">
-                <i class="fa-solid fa-ship text-4xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="400">
+                <i class="fa-solid fa-ship text-4xl text-black mb-4"></i>
                 <h3 class="text-xl font-bold mb-4">Assessoria Náutica</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Habilitação Arrais amador</li>
@@ -231,8 +242,8 @@
                 <a href="#" class="w-full text-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 rounded-lg transition"><i class="fa-brands fa-whatsapp mr-2"></i>Assessoria Náutica</a>
             </div>
 
-            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-blue-600 flex flex-col" data-aos="fade-up" data-aos-delay="500">
-                <i class="fa-solid fa-passport text-4xl text-blue-600 mb-4"></i>
+            <div class="bg-white p-8 rounded-xl shadow-lg hover:-translate-y-2 transition duration-300 border-t-4 border-black flex flex-col" data-aos="fade-up" data-aos-delay="500">
+                <i class="fa-solid fa-passport text-4xl text-black mb-4"></i>
                 <h3 class="text-xl font-bold mb-4">Passaportes e Vistos</h3>
                 <ul class="text-gray-600 mb-8 space-y-3 text-sm flex-grow">
                     <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Emissão do 1º passaporte</li>
@@ -249,7 +260,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Entenda Como Atuamos</h2>
-                <div class="w-20 h-1 bg-blue-500 mx-auto mt-6 mb-4"></div>
+                <div class="w-20 h-1 bg-black mx-auto mt-6 mb-4"></div>
                 <p class="text-gray-600 text-lg">Detalhes completos sobre as nossas frentes de trabalho.</p>
             </div>
 
@@ -257,8 +268,8 @@
                 
                 <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm" open>
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-id-card text-blue-600"></i> Trânsito e CNH</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-blue-500"></i></span>
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-id-card text-black"></i> Trânsito e CNH</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
                     </summary>
                     <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-100 pt-4">
                         <p class="mb-3"><strong>Lei Seca:</strong> Atuamos na verificação completa do auto de infração, checando a validade do etilômetro junto ao INMETRO e buscando nulidades processuais para blindar a sua CNH.</p>
@@ -269,8 +280,8 @@
 
                 <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-car text-blue-600"></i> Regularização Veicular</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-blue-500"></i></span>
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-car text-black"></i> Regularização Veicular</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
                     </summary>
                     <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-100 pt-4">
                         <p class="mb-3">Despachante completo para evitar que você perca tempo no Detran. Realizamos <strong>Transferência de Propriedade</strong>, emissão de <strong>1ª Licença</strong> para veículos zero, e <strong>Licenciamento Anual</strong>.</p>
@@ -280,8 +291,8 @@
 
                 <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-crosshairs text-blue-600"></i> Armas de Fogo e CAC</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-blue-500"></i></span>
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-crosshairs text-black"></i> Armas de Fogo e CAC</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
                     </summary>
                     <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-100 pt-4">
                         <p class="mb-3">Assessoria documental rígida e segura para o Exército e Polícia Federal. Cuidamos do processo de <strong>Posse e Porte de Arma</strong>.</p>
@@ -291,8 +302,8 @@
 
                 <details class="group border border-gray-200 rounded-lg bg-white p-6 cursor-pointer shadow-sm">
                     <summary class="flex items-center justify-between font-bold text-xl text-slate-900 list-none">
-                        <span class="flex items-center gap-3"><i class="fa-solid fa-ship text-blue-600"></i> Náutica e Passaportes</span>
-                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-blue-500"></i></span>
+                        <span class="flex items-center gap-3"><i class="fa-solid fa-ship text-black"></i> Náutica e Passaportes</span>
+                        <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-gray-500"></i></span>
                     </summary>
                     <div class="text-gray-600 mt-4 leading-relaxed border-t border-gray-100 pt-4">
                         <p class="mb-3"><strong>Náutica:</strong> Documentação e regularização na Capitania dos Portos para habilitação de <strong>Arrais Amador</strong> e <strong>Motonauta</strong>, além da legalização de embarcações.</p>
@@ -304,7 +315,7 @@
         </div>
     </section>
 
-    <section id="equipe" class="py-20 bg-slate-900 text-white">
+    <section id="equipe" class="py-20 bg-black text-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold">Conheça Nossa Equipe</h2>
@@ -341,9 +352,9 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <footer class="bg-slate-950 text-gray-400 py-12 text-center border-t border-slate-800">
+    <footer class="bg-black text-gray-400 py-12 text-center border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-2xl font-bold text-white mb-2">BRADDOCK<span class="text-blue-500">.</span></h2>
+            <h2 class="text-2xl font-bold text-white mb-2">BRADDOCK<span class="text-gray-500">.</span></h2>
             <p class="mb-6">Atendimento rápido, transparente e especializado.</p>
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-instagram text-2xl"></i></a>
@@ -353,7 +364,6 @@
             <p class="text-sm">© 2026 Braddock Despachante Federal. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
