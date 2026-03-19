@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidade — WhatsApp</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00A884;
+    --green-light: #25D366;
+    --green-dark: #075E54;
+    --bg: #0a0f0d;
+    --surface: #111a16;
+    --surface2: #162019;
+    --border: rgba(0,168,132,0.15);
+    --text: #e8f0ec;
+    --muted: #7a9e8e;
+    --accent: #00A884;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,15,13,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+
+  .header-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 60px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--green);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+  }
+
+  .logo-icon svg { width: 20px; height: 20px; fill: white; }
+
+  .logo-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    letter-spacing: -0.02em;
+  }
+
+  .header-badge {
+    margin-left: auto;
+    font-size: 0.7rem;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 2px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 6rem 2rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--green);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--green);
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 span {
+    color: var(--green);
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .meta-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .meta-value {
+    font-size: 0.9rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* Divider */
+  .divider {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .divider hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* TOC */
+  .toc-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .toc::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px; height: 100%;
+    background: linear-gradient(to bottom, var(--green-light), var(--green-dark));
+  }
+
+  .toc-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .toc-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.4rem 2rem;
+  }
+
+  .toc-list a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.88rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+    opacity: 0.8;
+  }
+
+  .toc-list a::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--green);
+    flex-shrink: 0;
+    opacity: 0.6;
+  }
+
+  .toc-list a:hover { color: var(--green); opacity: 1; }
+
+  /* Content */
+  .content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem 6rem;
+  }
+
+  .section {
+    margin-bottom: 3.5rem;
+    animation: fadeUp 0.5s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(0,168,132,0.1);
+    border: 1px solid rgba(0,168,132,0.2);
+    border-radius: 6px;
+    padding: 4px 8px;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    margin-top: 3px;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .section-body p {
+    font-size: 0.93rem;
+    color: rgba(232,240,236,0.8);
+    margin-bottom: 1rem;
+  }
+
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .section-body strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  /* Info cards */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .info-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .info-card:hover {
+    border-color: rgba(0,168,132,0.4);
+    transform: translateY(-2px);
+  }
+
+  .info-card-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .info-card p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0 !important;
+  }
+
+  /* Alert box */
+  .alert {
+    background: rgba(0,168,132,0.06);
+    border: 1px solid rgba(0,168,132,0.25);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .alert-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+
+  .alert p {
+    font-size: 0.88rem;
+    color: rgba(232,240,236,0.85);
+    margin: 0 !important;
+  }
+
+  /* List */
+  .policy-list {
+    list-style: none;
+    margin: 1rem 0;
+  }
+
+  .policy-list li {
+    font-size: 0.9rem;
+    color: rgba(232,240,236,0.8);
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .policy-list li:last-child { border-bottom: none; }
+
+  .policy-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-size: 0.75rem;
+    top: 0.55rem;
+  }
+
+  /* Rights grid */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+  }
+
+  .right-pill {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    color: var(--text);
+    font-weight: 400;
+    transition: all 0.2s;
+  }
+
+  .right-pill:hover {
+    border-color: var(--green);
+    background: rgba(0,168,132,0.08);
+    color: var(--green);
+  }
+
+  .right-pill span { font-size: 1rem; }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 2rem;
+  }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--green); }
+
+  /* Progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: 2px;
+    background: var(--green);
+    z-index: 99;
+    transition: width 0.1s;
+    width: 0%;
+  }
+
+  /* Back to top */
+  .back-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 40px;
+    height: 40px;
+    background: var(--green);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    border: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .back-top.visible { opacity: 1; pointer-events: auto; }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .hero { padding: 4rem 1.5rem 3rem; }
+    .content { padding: 0 1.5rem 4rem; }
+    .toc-wrap { padding: 2rem 1.5rem; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </div>
+      <span class="logo-name">WhatsApp</span>
+    </a>
+    <div class="header-badge">Política de Privacidade</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Documento oficial</div>
+  <h1>Política de<br><span>Privacidade</span></h1>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Última atualização</span>
+      <span class="meta-value">4 de janeiro de 2024</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Empresa</span>
+      <span class="meta-value">WhatsApp LLC</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Versão</span>
+      <span class="meta-value">2024.1</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<div class="toc-wrap">
+  <div class="toc">
+    <p class="toc-title">Índice</p>
+    <ul class="toc-list">
+      <li><a href="#s1">Informações que coletamos</a></li>
+      <li><a href="#s2">Como usamos as informações</a></li>
+      <li><a href="#s3">Informações que você fornece</a></li>
+      <li><a href="#s4">Informações coletadas automaticamente</a></li>
+      <li><a href="#s5">Compartilhamento de informações</a></li>
+      <li><a href="#s6">Segurança e criptografia</a></li>
+      <li><a href="#s7">Seus direitos e controles</a></li>
+      <li><a href="#s8">Retenção de dados</a></li>
+      <li><a href="#s9">Transferências internacionais</a></li>
+      <li><a href="#s10">Contato e DPO</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- Intro alert -->
+  <div class="alert">
+    <div class="alert-icon">🔒</div>
+    <p>Esta Política de Privacidade descreve como o WhatsApp LLC recebe, usa e compartilha informações em conexão com nossos Serviços, incluindo mensagens, chamadas, fotos, vídeos, recursos de negócios e outros recursos e funcionalidades.</p>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="s1">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2>Informações que coletamos</h2>
+    </div>
+    <div class="section-body">
+      <p>O WhatsApp recebe ou coleta informações quando você usa nossos Serviços, incluindo quando se registra, usa nossos Serviços ou nos envia e-mail para comunicação. Os tipos de informações que coletamos incluem:</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📱</div>
+          <h3>Dados de conta</h3>
+          <p>Número de telefone, informações de perfil como nome e foto.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💬</div>
+          <h3>Mensagens</h3>
+          <p>Conteúdo protegido por criptografia de ponta a ponta — não podemos lê-los.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📍</div>
+          <h3>Localização</h3>
+          <p>Endereço IP, informações de rede móvel e localização aproximada.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔗</div>
+          <h3>Conexões</h3>
+          <p>Lista de contatos e grupos que você usa no aplicativo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="s2">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2>Como usamos as informações</h2>
+    </div>
+    <div class="section-body">
+      <p>Usamos as informações que temos para operar, fornecer, melhorar, entender, personalizar, suportar e comercializar nossos Serviços.</p>
+      <ul class="policy-list">
+        <li>Completar registros de conta, fornecer suporte ao cliente e responder às suas comunicações</li>
+        <li>Enviar comunicações relacionadas ao serviço, incluindo confirmações, faturas e alertas de segurança</li>
+        <li>Melhorar, personalizar e facilitar o uso de nossos Serviços</li>
+        <li>Compreender como você usa nossos Serviços para ajudar a melhorá-los</li>
+        <li>Manter a segurança, integridade e proteção dos Serviços</li>
+        <li>Cumprir obrigações legais e processos legais aplicáveis</li>
+        <li>Facilitar comunicações e transações no âmbito das Empresas Meta</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="s3">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2>Informações que você nos fornece</h2>
+    </div>
+    <div class="section-body">
+      <p>Você fornece informações quando usa os Serviços. Isso pode incluir:</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">👤</div>
+          <h3>Informações de conta</h3>
+          <p>Quando se registra, você fornece número de telefone, nome de perfil e foto opcional.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">📞</div>
+          <h3>Contatos</h3>
+          <p>Se permitido, coletamos contatos do seu telefone para ajudá-lo a se conectar.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">💳</div>
+          <h3>Transações</h3>
+          <p>Dados de pagamento para transações com o WhatsApp Pay (onde disponível).</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🆘</div>
+          <h3>Suporte</h3>
+          <p>Informações de diagnóstico enviadas quando você relata um problema.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="s4">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2>Informações coletadas automaticamente</h2>
+    </div>
+    <div class="section-body">
+      <p>Coletamos informações automaticamente quando você usa nossos Serviços:</p>
+      <ul class="policy-list">
+        <li><strong>Informações de uso:</strong> frequência e duração das atividades, grupos que você participa, recursos que usa</li>
+        <li><strong>Informações do dispositivo:</strong> hardware, sistema operacional, nível de bateria, força do sinal, versão do app</li>
+        <li><strong>Informações de conexão:</strong> endereço IP, operadora móvel, rede Wi-Fi, fuso horário e identificadores únicos do dispositivo</li>
+        <li><strong>Cookies:</strong> utilizamos para operar e fornecer os Serviços e informações sobre como as pessoas usam o WhatsApp</li>
+      </ul>
+      <div class="alert">
+        <div class="alert-icon">ℹ️</div>
+        <p><strong>Nota importante:</strong> As suas mensagens, chamadas, fotos, vídeos e arquivos enviados pelo WhatsApp são protegidos por criptografia de ponta a ponta e não podem ser lidos pelo WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section" id="s5">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2>Compartilhamento de informações</h2>
+    </div>
+    <div class="section-body">
+      <p>O WhatsApp não vende, aluga nem compartilha suas informações pessoais com terceiros para fins de marketing sem o seu consentimento explícito. Podemos compartilhar informações com:</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">🏢</div>
+          <h3>Empresas Meta</h3>
+          <p>Compartilhamos informações com a família de empresas da Meta para operar e melhorar os serviços.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🤝</div>
+          <h3>Fornecedores</h3>
+          <p>Empresas terceirizadas que nos ajudam a fornecer, melhorar e comercializar os Serviços.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">⚖️</div>
+          <h3>Autoridades legais</h3>
+          <p>Quando exigido por lei, ordem judicial ou processo legal aplicável.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🔄</div>
+          <h3>Fusões</h3>
+          <p>Em caso de fusão, aquisição ou venda de ativos, as informações podem ser transferidas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section" id="s6">
+    <div class="section-header">
+      <span class="section-number">06</span>
+      <h2>Segurança e criptografia</h2>
+    </div>
+    <div class="section-body">
+      <p>Implementamos salvaguardas técnicas e organizacionais para proteger suas informações pessoais contra acesso não autorizado, destruição ou alteração acidental.</p>
+      <div class="alert">
+        <div class="alert-icon">🛡️</div>
+        <p>Todas as mensagens, chamadas de voz e vídeo, documentos e outros conteúdos são protegidos por <strong>criptografia de ponta a ponta</strong>. Isso significa que apenas você e a pessoa com quem está comunicando podem ler ou ouvir o conteúdo — nem o WhatsApp, nem a Meta.</p>
+      </div>
+      <ul class="policy-list">
+        <li>Criptografia de ponta a ponta em todas as comunicações pessoais e em grupo</li>
+        <li>Backups criptografados (opcional) no Google Drive e iCloud</li>
+        <li>Autenticação em dois fatores disponível para proteger sua conta</li>
+        <li>Verificação de segurança por código de segurança para validar contatos</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 7 -->
+  <div class="section" id="s7">
+    <div class="section-header">
+      <span class="section-number">07</span>
+      <h2>Seus direitos e controles</h2>
+    </div>
+    <div class="section-body">
+      <p>Dependendo de onde você mora, você pode ter direitos específicos em relação às suas informações pessoais. O WhatsApp disponibiliza ferramentas e controles para todos os usuários:</p>
+      <div class="rights-grid">
+        <div class="right-pill"><span>📋</span> Acessar dados</div>
+        <div class="right-pill"><span>✏️</span> Corrigir informações</div>
+        <div class="right-pill"><span>🗑️</span> Excluir conta</div>
+        <div class="right-pill"><span>📥</span> Exportar dados</div>
+        <div class="right-pill"><span>🚫</span> Bloquear contatos</div>
+        <div class="right-pill"><span>👁️</span> Controlar visibilidade</div>
+        <div class="right-pill"><span>🔔</span> Gerenciar notificações</div>
+        <div class="right-pill"><span>📊</span> Relatório de dados</div>
+      </div>
+      <p style="margin-top:1.2rem;">Para exercer esses direitos, acesse <strong>Configurações → Conta → Solicitar informações da conta</strong> no aplicativo ou entre em contato conosco pelo endereço abaixo.</p>
+    </div>
+  </div>
+
+  <!-- Section 8 -->
+  <div class="section" id="s8">
+    <div class="section-header">
+      <span class="section-number">08</span>
+      <h2>Retenção de dados</h2>
+    </div>
+    <div class="section-body">
+      <p>Mantemos as informações pelo tempo necessário para fornecer nossos Serviços ou para outras finalidades legítimas, como cumprir nossas obrigações legais, resolver disputas e fazer cumprir nossos acordos.</p>
+      <ul class="policy-list">
+        <li>Mensagens entregues são excluídas de nossos servidores após a entrega</li>
+        <li>Mensagens não entregues são mantidas por até 30 dias e depois excluídas</li>
+        <li>Informações de conta são mantidas enquanto você usar os Serviços</li>
+        <li>Após exclusão da conta, a maioria dos dados é removida em até 90 dias</li>
+        <li>Algumas informações podem ser retidas por exigências legais</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 9 -->
+  <div class="section" id="s9">
+    <div class="section-header">
+      <span class="section-number">09</span>
+      <h2>Transferências internacionais</h2>
+    </div>
+    <div class="section-body">
+      <p>O WhatsApp compartilha informações globalmente, inclusive com o grupo Meta. Podemos transferir, armazenar e processar suas informações fora do seu país de residência.</p>
+      <div class="alert">
+        <div class="alert-icon">🌍</div>
+        <p>Para usuários no Espaço Econômico Europeu (EEE) e no Brasil (LGPD), garantimos que as transferências internacionais de dados cumprem com as leis de proteção de dados aplicáveis, incluindo o uso de Cláusulas Contratuais Padrão aprovadas pela Comissão Europeia.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 10 -->
+  <div class="section" id="s10">
+    <div class="section-header">
+      <span class="section-number">10</span>
+      <h2>Contato e DPO</h2>
+    </div>
+    <div class="section-body">
+      <p>Se tiver dúvidas sobre esta Política de Privacidade ou sobre nossas práticas de privacidade, entre em contato conosco:</p>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">📬</div>
+          <h3>Endereço</h3>
+          <p>WhatsApp LLC, 1601 Willow Road, Menlo Park, California 94025, EUA</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🌐</div>
+          <h3>Central de Ajuda</h3>
+          <p>whatsapp.com/contact/privacy<br>Disponível em português</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">🇧🇷</div>
+          <h3>Brasil (LGPD)</h3>
+          <p>Para solicitações sob a Lei Geral de Proteção de Dados: privacidade@whatsapp.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2024 WhatsApp LLC. Todos os direitos reservados.</span>
+    <div class="footer-links">
+      <a href="#">Termos de Serviço</a>
+      <a href="#">Cookies</a>
+      <a href="#">Central de Ajuda</a>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Progress bar
+  const progressBar = document.getElementById('progressBar');
+  const backTop = document.getElementById('backTop');
+  
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const total = document.body.scrollHeight - window.innerHeight;
+    progressBar.style.width = (scrolled / total * 100) + '%';
+    backTop.classList.toggle('visible', scrolled > 400);
+  });
+
+  // Staggered section animations
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = '0.05s';
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, { threshold: 0.1 });
+  sections.forEach(s => { s.style.opacity = '0'; observer.observe(s); });
+</script>
+</body>
+</html>
